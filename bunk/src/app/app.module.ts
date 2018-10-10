@@ -1,32 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { WeatherComponent } from './components/weather/weather.component';
-import { QuizComponent } from './components/quiz/quiz.component';
-import { FteamComponent } from './components/fteam/fteam.component';
-import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FteamComponent } from './components/fteam/fteam.component';
+import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 import { WeatherWidgetComponent } from './components/weather-widget/weather-widget.component';
-
+import { WeatherComponent } from './components/weather/weather.component';
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     QuizComponent,
     FteamComponent,
-    WeatherWidgetComponent
+    WeatherWidgetComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(router: Router) {
-  }
+  constructor(router: Router) {}
 }

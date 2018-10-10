@@ -1,0 +1,21 @@
+<div class="form-group" *ngIf="!!question">
+  <div>
+    <span class="font-weight-bold">Question: </span>
+    {{question}}
+  </div>
+  <label><span class="font-weight-bold">Answer:</span>
+    <input class="form-control" type="text" [formControl]="answer" />
+  </label>
+  <br/>
+  <div *ngIf="formSubmitted" class="mb-sm-2">
+    <div *ngIf="isValid" class="text-success">Correct</div>
+    <div *ngIf="!isValid" class="text-danger">Incorrect</div>
+    <div *ngIf="answer.invalid" class="text-danger">Invalid answer</div>
+  </div>
+  <button type="submit"
+    (click)="clickBtn()"
+    class="btn btn-primary m-t-sm"
+    [disabled]="!answer.valid">
+      Check Answer
+  </button>
+</div>

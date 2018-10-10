@@ -1,3 +1,7 @@
-<p>
-  quiz works!
-</p>
+<div>
+  <app-quiz-question
+    (questionAnswered)="verifyAnswer($event)"
+    [isValid]="isValid"
+    [question]="question">
+  </app-quiz-question>
+</div>
