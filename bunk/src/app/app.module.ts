@@ -7,16 +7,20 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { FteamComponent } from './components/fteam/fteam.component';
 import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherWidgetComponent } from './components/weather-widget/weather-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     QuizComponent,
-    FteamComponent
+    FteamComponent,
+    WeatherWidgetComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

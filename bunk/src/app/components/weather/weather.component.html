@@ -1,3 +1,10 @@
-<p>
-  weather works!
-</p>
+<div>
+  <div *ngIf="returnedData$ | async as data" class="row">
+    <app-weather-widget
+      class="col-3"
+      *ngFor="let item of data?.list"
+      [city]="item?.name"
+      [input]="item?.main">
+    </app-weather-widget>
+  </div>
+</div>
