@@ -1,0 +1,22 @@
+{
+  "name": "bunktest",
+  "version": "1.0.0",
+  "description": "Bunk test rg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eBitzu/bunk.git"
+  },
+  "keywords": [
+    "bunk"
+  ],
+  "author": "Gabriel Raducu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eBitzu/bunk/issues"
+  },
+  "homepage": "https://github.com/eBitzu/bunk#readme"
+}
