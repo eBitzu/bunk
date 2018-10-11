@@ -1,0 +1,89 @@
+<div class="d-flex content">
+  <div class="pitch">
+    <div class="font-weight-bold">System: <span>{{system}}</span></div>
+    <div class="field">
+      <div class="players">
+        <div class="line">
+          <div class="clickablePos" [class.taken]="pitch.goalkeeper.picked"  (click)="handlePlayerPick('gk')">GK</div>
+        </div>
+        <div class="line">
+          <div class="holder" *ngIf="!!pitch.def.length">
+            <div class="clickablePos"  (click)="handlePlayerPick('Def', df)" *ngFor="let df of pitch.def">
+              <span [class.taken]='df.picked'>DF</span>
+            </div>
+          </div>
+        </div>
+        <div class="line">
+          <div class="holder" *ngIf="!!pitch.mid.length">
+            <div class="clickablePos" (click)="handlePlayerPick('Mid', md)" *ngFor="let md of pitch.mid">
+              <span [class.taken]='md.picked'>MD</span>
+            </div>
+          </div>
+        </div>
+        <div class="line">
+          <div class="holder" *ngIf="!!pitch.att.length">
+            <div class="clickablePos" (click)="handlePlayerPick('Att', at)" *ngFor="let at of pitch.att">
+              <span [class.taken]='at.picked'>AT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-list">
+    <div class="font-weight-bold">Goalkeepers: </div>
+    <div class="gk" [class.sectionActive]="listSelection.showGKList">
+      <div *ngFor="let gk of team.gk"
+        class = "player"
+        [class.text-success]="gk.picked"
+        [class.text-danger]="pitch.goalkeeper.picked && !gk.picked"
+        (click)="handleGkSelection(gk)"
+        >
+        {{gk.name}}
+      </div>
+    </div>
+    <div class="font-weight-bold">Defenders: </div>
+
+    <div class="def" [class.sectionActive]="listSelection.showDefList">
+      <div *ngFor="let def of team.def"
+        class = "player"
+        [class.text-success]="def.picked"
+        [class.text-danger]="lines.defFull && !def.picked"
+        (click)="handlePlayerSelection(def, 'Def')"
+      >
+        {{def.name}}
+      </div>
+    </div>
+    <div class="font-weight-bold">Midfielder: </div>
+
+    <div class="mid" [class.sectionActive]="listSelection.showMidList">
+      <div *ngFor="let mid of team.mid"
+        class = "player"
+        [class.text-success]="mid.picked"
+        [class.text-danger]="lines.midFull && !mid.picked"
+        (click)="handlePlayerSelection(mid, 'Mid')"
+        >
+        {{mid.name}}
+      </div>
+    </div>
+    <div class="font-weight-bold">Attackers: </div>
+
+    <div class="att" [class.sectionActive]="listSelection.showAttList">
+      <div *ngFor="let att of team.att"
+        class = "player"
+        [class.text-success]="att.picked"
+        [class.text-danger]="lines.attFull && !att.picked"
+        (click)="handlePlayerSelection(att, 'Att')"
+        >
+        {{att.name}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class='content'>
+  <div class="coach">
+    <div *ngFor="let coach of team.coach">
+      Coach: <span class="font-weight-bold">{{coach.name}}</span>
+    </div>
+  </div>
+</div>

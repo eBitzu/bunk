@@ -10,6 +10,7 @@ import { QuizQuestionComponent } from './components/quiz-question/quiz-question.
 import { QuizComponent } from './components/quiz/quiz.component';
 import { WeatherWidgetComponent } from './components/weather-widget/weather-widget.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { FootballPitchComponent } from './components/football-pitch/football-pitch.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { WeatherComponent } from './components/weather/weather.component';
     QuizComponent,
     FteamComponent,
     WeatherWidgetComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
+    FootballPitchComponent
   ],
   imports: [
     BrowserModule,
